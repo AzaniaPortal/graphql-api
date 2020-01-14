@@ -1,0 +1,72 @@
+type User {
+  id: Int!
+  name: String!
+  surname: String
+  email: String!
+  password: String
+  profile_photo: String
+  on_twitter: YES_NO
+  on_facebook: YES_NO
+  on_whatsapp: YES_NO
+  can_report: YES_NO
+  reg_date: String!
+  mod_date: String
+  facebook_username: String
+  twitter_username: String
+  whatsapp_number: String
+  user_type: [UserType]
+}
+
+type UserType {
+  id: Int!
+  user_type: USER_TYPES
+}
+
+type MissingPerson {
+  id: Int!
+  full_name: String!
+  went_missing_in: String
+  went_missing_on: String!
+  person_description: String
+  person_picture: String!
+  reported_by: [User]
+  reported_on: String
+  modified_by: [User]
+  modified_on: String
+  approved: YES_NO!
+  viewable: YES_NO!
+}
+
+input UserInput {
+  id: Int
+}
+
+input MissingPersonInput {
+  id: Int
+}
+
+enum YES_NO {
+  YES
+  NO
+}
+
+enum USER_TYPES {
+  REPORTER
+  ADMIN
+  SUPER_ADMIN
+}
+
+type Mutation {
+  createUser(input: UserInput!): User
+  createMissingPerson(input: MissingPersonInput!): MissingPerson
+}
+
+type Query {
+  User(id: ID!): User
+  MissingPerson(id: ID!): MissingPerson
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}
