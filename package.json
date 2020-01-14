@@ -1,0 +1,28 @@
+{
+    "name": "azaniaportal-api",
+    "version": "1.0.1",
+    "description": "azania portal api",
+    "main": "index.js",
+    "author": "josiah thobejane",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "func": "serverless deploy function --function graphql",
+        "deploy": "serverless deploy",
+        "remove": "serverless remove"
+    },
+    "dependencies": {
+        "graphql-scalars": "^1.0.4",
+        "graphql-yoga": "^1.17.4",
+        "neo4j-graphql-js": "^2.9.3",
+        "pg": "^7.11.0",
+        "serverless": "^1.31.0",
+        "serverless-mysql": "^1.4.0",
+        "serverless-offline": "^5.12.1",
+        "uuid": "^3.3.2"
+    },
+    "devDependencies": {
+        "serverless-dotenv-plugin": "^2.1.1",
+        "serverless-pseudo-parameters": "^2.5.0"
+    }
+}
