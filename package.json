@@ -9,6 +9,7 @@
     "scripts": {
         "func": "serverless deploy function --function graphql",
         "deploy": "serverless deploy",
+        "offline": "serverless offline",
         "remove": "serverless remove"
     },
     "dependencies": {
