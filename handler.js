@@ -10,7 +10,8 @@ const resolvers = {
   },
   Mutation: {
     createUser: require('./resolver/Mutation/createUser').func,
-    createMissingPerson: require('./resolver/Mutation/createUser').func
+    createMissingPerson: require('./resolver/Mutation/createUser').func,
+    updateMissingPerson: require('./resolver/Mutation/updateMissingPerson').func
   }
 }
 
