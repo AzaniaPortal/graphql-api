@@ -42,7 +42,17 @@ input UserInput {
 }
 
 input MissingPersonInput {
-  id: Int
+  full_name: String
+  went_missing_in: String
+  went_missing_on: String
+  person_description: String
+  person_picture: String
+  reported_by: Int
+  reported_on: String
+  modified_by: Int
+  modified_on: String
+  approved: YES_NO
+  viewable: YES_NO
 }
 
 enum YES_NO {
@@ -59,6 +69,7 @@ enum USER_TYPES {
 type Mutation {
   createUser(input: UserInput!): User
   createMissingPerson(input: MissingPersonInput!): MissingPerson
+  updateMissingPerson(id: ID!, input: MissingPersonInput): MissingPerson
 }
 
 type Query {
