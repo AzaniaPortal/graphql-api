@@ -1,2 +1,2 @@
 # Azania Portal API
-GraphQL API
+GraphQL API Documentation
