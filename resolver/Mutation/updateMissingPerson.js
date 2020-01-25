@@ -13,16 +13,16 @@ exports.func = async (_, { id, input }) => {
   })
 
   // formulate a query to update the missing persons database record
-  const queryString = `UPDATE users SET ${Object.keys(input).toString().replace(/,/g, '=?,')}=? WHERE id=?`
+  const queryString = `UPDATE missing_persons SET ${Object.keys(input).toString().replace(/,/g, '=?,')}=? WHERE id=?`
 
   // run the formulated query
   await client.query(queryString, [...Object.values(input), id])
 
   // return the data we have just updated
-  const resp = await common.getMissingPerson(client, id)
+  const response = await common.getMissingPerson(client, id)
 
   // Close the connection.
   client.quit()
 
-  return resp
+  return response
 }
